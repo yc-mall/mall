@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="MySQLTables" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1/digitalmall" userId="root" password="a">
+		</jdbcConnection>
+		<!-- 实体类包名 -->
+		<javaModelGenerator targetPackage="com.yc.digital.bean"
+			targetProject="src/main/java">
+		</javaModelGenerator>
+		<!-- Dao类包名 -->
+		<sqlMapGenerator targetPackage="com.yc.digital.dao"
+			targetProject="src/main/java">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.yc.digital.dao" targetProject="src/main/java">
+		</javaClientGenerator>
+
+		<table tableName="order">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table tableName="product">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+		<table tableName="user">
+			<generatedKey column="id" sqlStatement="mysql" />
+		</table>
+
+	</context>
+</generatorConfiguration>
